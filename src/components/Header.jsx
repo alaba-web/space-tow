@@ -11,7 +11,7 @@ const Header = () => {
   const { openMenu, closeMenu, menu } = useData();
   // const [link, setLink] = useState("");
   const [activeNav, setActiveNav] = useState(0);
-  const paths = ["/space-tw", "/destinations", "/crew", "/technology"];
+  const paths = ["/", "/destinations", "/crew", "/technology"];
 
   const handleLink = (indx) => {
     setActiveNav(indx);
