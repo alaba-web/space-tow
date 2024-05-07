@@ -6,6 +6,10 @@
   padding: 2rem 2rem;
 }
 
+.logo > img {
+  cursor: pointer;
+}
+
 .hamburger {
   display: none;
 }

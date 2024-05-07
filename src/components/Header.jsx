@@ -7,7 +7,6 @@ import { useData } from "../contexts/DataContext";
 const navLinks = ["HOME", "DESTINATION", "CREW", "TECHNOLOGY"];
 const Header = () => {
   const { openMenu, closeMenu, menu, activeNav, setActiveNav } = useData();
-  
 
   const paths = ["/", "/destinations", "/crew", "/technology"];
 
@@ -17,7 +16,7 @@ const Header = () => {
 
   return (
     <header className="header">
-      <div>
+      <div className="logo" onClick={() => setActiveNav(0)}>
         <img src={logo} alt="logo" />
       </div>{" "}
       <div className="line"></div>
