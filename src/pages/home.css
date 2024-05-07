@@ -120,7 +120,7 @@
 @media (min-width: 900px) {
   .container {
     background-image: url("../assets/home/background-home-desktop.jpg");
-    height: 100%;
+    height: max-content;
   }
 
   .home {
