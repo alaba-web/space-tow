@@ -28,15 +28,26 @@ const Technology = () => {
   }, []);
 
   useEffect(() => {
-    if (viewportWidth < 1000) {
+    if (viewportWidth < 900) {
       setImgUrl(imgsLand[techIndex]);
     } else {
       setImgUrl(imgsPort[techIndex]);
     }
-  }, [viewportWidth]);
+  }, [techIndex]);
   const displayItem = (item) => {
     return jsonData.technology.map((tech) => tech).filter((_, i) => i === item);
   };
+
+  const nextTech = () => {
+    setTechIndex((prevIndex) =>
+      prevIndex === jsonData.technology.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  useEffect(() => {
+    const interval = setInterval(nextTech, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   const handleTechClick = (index) => {
     setTechIndex(index);

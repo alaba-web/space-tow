@@ -5,9 +5,9 @@ const useData = () => useContext(DataContext);
 
 const DataContextProvider = ({ children }) => {
   const [jsonData, setJsonData] = useState(data);
-  console.log(jsonData);
   const [menu, setMenu] = useState(false);
   const [destination, setDestination] = useState(0);
+  const [activeNav, setActiveNav] = useState(0);
   const openMenu = () => {
     setMenu(!menu);
   };
@@ -25,7 +25,6 @@ const DataContextProvider = ({ children }) => {
     setDestination(index);
   };
 
-  console.log(displayItem(3));
   return (
     <DataContext.Provider
       value={{
@@ -37,6 +36,8 @@ const DataContextProvider = ({ children }) => {
         displayItem,
         handleDestClick,
         destination,
+        activeNav,
+        setActiveNav,
       }}
     >
       {children}

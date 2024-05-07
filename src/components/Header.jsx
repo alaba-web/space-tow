@@ -1,16 +1,14 @@
 import "./header.css";
 import logo from "../assets/shared/logo.svg";
-import { Link } from "react-router-dom";
 import hamburger from "../assets/shared/icon-hamburger.svg";
 import close from "../assets/shared/icon-close.svg";
 import { useData } from "../contexts/DataContext";
-import { useState } from "react";
 
 const navLinks = ["HOME", "DESTINATION", "CREW", "TECHNOLOGY"];
 const Header = () => {
-  const { openMenu, closeMenu, menu } = useData();
-  // const [link, setLink] = useState("");
-  const [activeNav, setActiveNav] = useState(0);
+  const { openMenu, closeMenu, menu, activeNav, setActiveNav } = useData();
+  
+
   const paths = ["/", "/destinations", "/crew", "/technology"];
 
   const handleLink = (indx) => {
@@ -36,9 +34,7 @@ const Header = () => {
               onClick={() => handleLink(i)}
               className={i === activeNav ? "active-nav" : ""}
             >
-              <Link to={paths[i]}>
-                <span>0{i}</span> {nav}
-              </Link>
+              <span>0{i}</span> {nav}
             </li>
           ))}
         </ul>

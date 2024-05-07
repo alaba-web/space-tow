@@ -26,7 +26,6 @@ const Crew = () => {
     const interval = setInterval(nextCrew, 3000);
     return () => clearInterval(interval);
   }, []);
-  console.log(jsonData.crew.length);
 
   const handleCrewClick = (index) => {
     setCrewIndex(index);
