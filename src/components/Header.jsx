@@ -12,6 +12,7 @@ const Header = () => {
 
   const handleLink = (indx) => {
     setActiveNav(indx);
+    closeMenu;
   };
 
   return (
